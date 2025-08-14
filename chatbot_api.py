@@ -1,11 +1,9 @@
 # huggingface_api.py
 import requests
 
-API_KEY ="sk-d360b59fa09a4986b5c236ef3805f745"
-#model_id = "openai/gpt-3.5-turbo"
-#
-MODEL_ID="deepseek/deepseek-r1:free"
-API_URL="https://openrouter.ai/api/v1"
+API_KEY ="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"
+model_id = "ibm-granite/granite-3.3-2b-instruct"
+API_URL=f"http://api-infrence.huggingface.co/models/{model_id}"
 headers = {"Authorization": f"Bearer {API_KEY}"}
 
 def get_chatbot_response(user_input):
@@ -25,3 +23,4 @@ def get_chatbot_response(user_input):
             return str(data)
     except requests.exceptions.RequestException as e:
         return f"Request failed: {str(e)}"
+
